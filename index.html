@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+    <title>Monte ore Docenti</title>
+</head>
+
+<body class="light-background">
+
+    <div class="container-fluid title-container border-separator">
+        <h1>Monte ore Docenti</h1>
+    </div>
+
+    <div class="container content-container border-separator">
+        <h3>Regola</h3>
+        <div class="flex-center">
+            <div class="text">A un docente avente</div>
+            <div class="input-group mb-3" style="max-width: 250px;">
+                <input type="text" class="form-control" placeholder="18" aria-label="Ore di lezione"
+                    aria-describedby="basic-addon2" id="regolaOreLezione" oninput="onInputChange()">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">ore lezione</span>
+                </div>
+            </div>
+            <div class="text">spettano</div>
+            <div class="input-group mb-3" style="max-width: 250px;">
+                <input type="text" class="form-control" placeholder="40" aria-label="Ore di riunione"
+                    aria-describedby="basic-addon2" id="regolaOreRiunione" oninput="onInputChange()">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">ore riunione</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content-container border-separator">
+        <h3>Calcolo</h3>
+        <div class="flex-center">
+            <div class="text">Se un docente X ha</div>
+            <div class="input-group mb-3" style="max-width: 250px;">
+                <input type="text" class="form-control" placeholder="Inserire ore" aria-label="Ore di lezione"
+                    aria-describedby="basic-addon2" id="calcoloOreLezione" oninput="onInputChange()">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">ore lezione</span>
+                </div>
+            </div>
+            <div class="text">allora gli spettano <span id="result" class="evidence">? ore</span> di riunione</div>
+        </div>
+    </div>
+
+    <div class="container content-container border-separator">
+        <h3>Formula</h3>
+        <div class="flex-center">
+            <div class="text">18 : 40 = ore_lezione : ore_riunione</div>
+            <div class="text">ore_riunione = ( 40 / 18 ) * ore_lezione</div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
