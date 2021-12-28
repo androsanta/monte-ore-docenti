@@ -22,10 +22,20 @@ function onInputChange() {
     const regolaOreRiunione = getRegolaOreRiunione()
     const calcoloOreLezione = getCalcoloOreLezione()
     if (typeof calcoloOreLezione === 'number') {
-        let result = calculateOreRiunione(
-            regolaOreLezione, regolaOreRiunione, calcoloOreLezione)
-        result = result.toFixed(result - Math.floor( result ) === 0 ? 0 : 2)
-        document.getElementById( 'result' ).innerText = `${result} ore`
+        const oreRiunione = calculateOreRiunione(
+            regolaOreLezione,
+            regolaOreRiunione,
+            calcoloOreLezione,
+        )
+        const oreIntegerValue = Math.trunc(oreRiunione)
+        const oreDecimalValue = +((oreRiunione - oreIntegerValue) * 60).toFixed(0)
+
+        let result = `${oreIntegerValue} ore`
+        if (oreDecimalValue) {
+            result += `, ${oreDecimalValue} minuti`
+        }
+
+        document.getElementById('result').innerText = result
     } else {
         document.getElementById('result').innerText = '? ore'
     }
